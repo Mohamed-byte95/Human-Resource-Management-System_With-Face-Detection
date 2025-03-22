@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="img">
+    <file>21404.jpg</file>
+    <file>Back Ground.jpg</file>
+    <file>copy-space-blank-commercial-advertisement.jpg</file>
+  </qresource>
+  <qresource prefix="Icon">
+    <file>HR.ico</file>
+  </qresource>
+</RCC>

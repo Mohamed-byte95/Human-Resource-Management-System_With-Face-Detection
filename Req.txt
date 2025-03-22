@@ -1,0 +1,38 @@
+1) Application Requirements:
+===========================
+    1- User perform registration with face id 
+    2- Main page with Two Buttons For Check-In and Check Out and Button For Login for (Manager/Admin) Roles 
+    3- User Press Button "Check-In" 
+    4- Prompt the Camera to perform Face Detection
+    5- Upon Successful Detection The System Logs the user into the system with the date and time 
+    6- a Formula to Check whether the user is Late or not and if late penalty is added 
+    7- a pop-up  message for welcoming the user and specifying if the user was late or not and if late show the duration the user was late in 
+    8- set a limit for the excuses for each user per month which is re-set at the beginning of each month passing the maximum number it will be resulted into penalties 
+    9- set a number of vacation days for each user if exceeded it  will be resulted into penalties and if not taken all will be presented to the bonuses 
+    10- manager can add penalties with days as values  which has max percentage of the salary 
+    11- at check out also the user press button "Check-Out" 
+    12- the camera is prompted and logs the user date and time of checkout and if the user exceeded the pre-set working hours it is implemented in bonuses 
+    13-The possibility for printing a table for all the employees their bonuses and their penalties and the total salary at the end of the report 
+
+2) Responsibilities:
+===================
+    1- The Manager:
+    ---------------
+        - Can login in the Main page and Logs him-self into the system and allow other users also  to log themselves 
+        - Enter Excuse and Vacations into the system
+        
+    2- The Admin (Owner):
+    --------------------
+        - Add New user.
+        - Change Salary.
+        - Add penalties with Limitations.
+        - Change the Working Hours.
+        - Remove user. 
+
+3) Environment:
+---------------
+    Programming Language :  Python 3.13
+    GUI : PyQt6
+    DataBase : Sqlite 
+    Face Detection: Opencv-python  , dlib , DeepFace / FaceNet
+    For Deplyement : PyInstaller 
