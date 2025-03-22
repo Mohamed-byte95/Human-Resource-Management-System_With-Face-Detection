@@ -1,6 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets 
 from PyQt6.QtWidgets import QWidget
-from Main  import insert_data
+from Data_Base  import insert_employee_data
 import sys
 
 
@@ -121,17 +121,21 @@ class Emp_Reg(QWidget,Ui_Emp_reg):
        
         
         
-        #Insert_Data_Into_DataBase
+    #Insert_Data_Into_DataBase
     def insert_user(self):
             #Retrieve_Data_From_the_Registeration_Form
             name = self.Name_t.text()
             phone = self.Phone_t.text()
             job_title = self.Title_t.text()
             
-            insert_data(name,phone,job_title)
+            #Add new Record to the data base 
+            insert_employee_data(name,phone,job_title)
+            
+            #Clear the data After Registeration
             self.clear()
             print("User Is Registered Successfully!")
             self.Registertation.setText("Regsiteration Success!")
+            
     #Clear the data fields after insertion 
     def clear(slef):
         slef.Name_t.clear()
@@ -139,11 +143,6 @@ class Emp_Reg(QWidget,Ui_Emp_reg):
         slef.Title_t.clear()
                 
             
-        
-        
-        
-        
-    
         
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

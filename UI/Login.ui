@@ -17,12 +17,12 @@
    <string>Human Resoruce Management</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="PICS/resoruce.qrc">
+   <iconset resource="../PICS/resoruce.qrc">
     <normaloff>:/Icon/HR.ico</normaloff>:/Icon/HR.ico</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow {
-border-image: url(:/img/21404.jpg);
+   <string notr="true">QMainWindow{
+border-image: url(:/Img/21404.jpg);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -161,6 +161,9 @@ border-image: url(:/img/21404.jpg);
                <pointsize>12</pointsize>
               </font>
              </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
             </widget>
            </item>
           </layout>
@@ -235,7 +238,7 @@ background-color: rgb(64, 147, 255);</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="PICS/resoruce.qrc"/>
+  <include location="../PICS/resoruce.qrc"/>
  </resources>
  <connections/>
 </ui>
