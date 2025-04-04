@@ -2,12 +2,18 @@ from sqlalchemy import create_engine , MetaData ,Table
 from sqlalchemy.orm import declarative_base , sessionmaker
 import sqlalchemy as sq
 #from datetime import time
+from dotenv import load_dotenv
+import os
+
+
+#Load the environment variables from the .env file
+load_dotenv()
 
 
 
 
 #The URL For The DataBase 
-db_url = "sqlite:///HR_System.db"
+db_url = os.getenv("Database_Path")
 
 #Connecting to a sqlite database
 engine = create_engine(db_url , echo=True)
