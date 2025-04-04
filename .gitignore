@@ -5,3 +5,4 @@ __pycache__
 data/hr_database.db
 
 .gitattributes
+test.py
