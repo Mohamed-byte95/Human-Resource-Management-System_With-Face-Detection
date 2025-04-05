@@ -2,7 +2,7 @@
 
 test.py
 __pycache__
-data/hr_database.db
+*.db
 
 .gitattributes
 test.py
