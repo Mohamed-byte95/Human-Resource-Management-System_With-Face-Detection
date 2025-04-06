@@ -1,6 +1,6 @@
 #Employee ORM + DB logic
 import sqlalchemy as sa
-from models.database import Base 
+from database import Base
 
 class Employee(Base):
     __tablename__ = 'employees'
@@ -13,7 +13,9 @@ class Employee(Base):
     hire_date = sa.Column(sa.DateTime, nullable=False)
     shift_start_time = sa.Column(sa.Time, nullable=False)
     shift_end_time = sa.Column(sa.Time, nullable=False)
-    
+
+
+
 def add_employee(session, name,phone ,role, face_id, salary, hire_date ,shift_start_time, shift_end_time):
     # Check if the employee already exists
     if session.query(Employee).filter((Employee.name == name) | (Employee.phone == phone)).first():
@@ -58,5 +60,5 @@ def update_employee(session, employee_id, name=None, phone=None, role=None, face
         session.commit()
         return True
     return False
-    
+
  

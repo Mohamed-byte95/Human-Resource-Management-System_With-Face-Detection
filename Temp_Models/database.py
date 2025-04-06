@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 db_url = os.getenv("db_url")
+#print("Database URL:", db_url)
 
 #create engine
 engine = sa.create_engine(db_url,echo=True)
