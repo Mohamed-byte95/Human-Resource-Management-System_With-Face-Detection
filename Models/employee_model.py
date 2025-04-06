@@ -1,6 +1,6 @@
 #Employee ORM + DB logic
 import sqlalchemy as sa
-from database import Base
+from Models.database import Base
 
 class Employee(Base):
     __tablename__ = 'employees'
@@ -8,11 +8,11 @@ class Employee(Base):
     name = sa.Column(sa.String, nullable=False ,unique=True)
     phone= sa.Column(sa.String, nullable=False,unique=True)
     role = sa.Column(sa.String, nullable=False)
-    face_id = sa.Column(sa.BLOB, nullable=False)
+    face_id = sa.Column(sa.BLOB, nullable=True)
     salary = sa.Column(sa.Float, nullable=False)
-    hire_date = sa.Column(sa.DateTime, nullable=False)
-    shift_start_time = sa.Column(sa.Time, nullable=False)
-    shift_end_time = sa.Column(sa.Time, nullable=False)
+    hire_date = sa.Column(sa.DateTime, nullable=True)
+    shift_start_time = sa.Column(sa.Time, nullable=True)
+    shift_end_time = sa.Column(sa.Time, nullable=True)
 
 
 
@@ -42,7 +42,7 @@ def delete_employee(session, employee_id):
         return True
     return False
 
-def update_employee(session, employee_id, name=None, phone=None, role=None, face_id=None, salary=None, hire_date=None):
+def update_employee(session, employee_id, name=None, phone=None, role=None, face_id=None, salary=None, hire_date=None, shift_start_time=None, shift_end_time=None):
     employee = session.query(Employee).filter(Employee.id == employee_id).first()
     if employee:
         if name:
@@ -57,6 +57,10 @@ def update_employee(session, employee_id, name=None, phone=None, role=None, face
             employee.salary = salary
         if hire_date:
             employee.hire_date = hire_date
+        if shift_start_time:
+            employee.shift_start_time = shift_start_time
+        if shift_end_time:
+            employee.shift_end_time = shift_end_time
         session.commit()
         return True
     return False

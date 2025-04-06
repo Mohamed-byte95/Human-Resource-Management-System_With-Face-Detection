@@ -2,8 +2,10 @@
 
 test.py
 __pycache__
-*.db
+
 
 
 .gitattributes
 test.py
+data/hr_db.db
+testing.py
