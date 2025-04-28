@@ -36,3 +36,19 @@
     DataBase : Sqlite 
     Face Detection: Opencv-python  , dlib , DeepFace / FaceNet
     For Deplyement : PyInstaller 
+
+
+
+    #logic 
+
+    calculate the penalties and bonuses 
+        for the penalties 
+            for late employees:
+                get the late time duration and return a penalty
+                if the user is on excuse check for the maximum number of excuses and calculate the penalty if the user exceed a threshold of excuses 
+                the ability of adding a mannual penalty by the manager but the value of the penalty shouldnt exceed a certain value of the salary 
+                
+
+            check if the user is on vacation or not
+               
+    calculate the excuses and vacations 

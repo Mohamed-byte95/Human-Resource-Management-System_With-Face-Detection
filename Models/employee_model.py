@@ -13,9 +13,10 @@ class Employee(Base):
     hire_date = sa.Column(sa.DateTime, nullable=True)
     shift_start_time = sa.Column(sa.Time, nullable=True)
     shift_end_time = sa.Column(sa.Time, nullable=True)
+    
 
 
-
+#ADD EMPLOYEE
 def add_employee(session, name,phone ,role, face_id, salary, hire_date ,shift_start_time, shift_end_time):
     # Check if the employee already exists
     if session.query(Employee).filter((Employee.name == name) | (Employee.phone == phone)).first():
@@ -26,14 +27,17 @@ def add_employee(session, name,phone ,role, face_id, salary, hire_date ,shift_st
     session.commit()
     return new_employee
 
+#GET EMPLOYEE
 def get_employee(session, employee_id):
     employee = session.query(Employee).filter(Employee.id == employee_id).first()
     return employee
 
+#GET_ALL_EMPLOYEE
 def get_all_employees(session):
     employees = session.query(Employee).all()
     return employees
 
+#DELETE_EMPLOYEE
 def delete_employee(session, employee_id):
     employee = session.query(Employee).filter(Employee.id == employee_id).first()
     if employee:
@@ -65,4 +69,3 @@ def update_employee(session, employee_id, name=None, phone=None, role=None, face
         return True
     return False
 
- 
